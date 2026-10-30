@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<script src="../../DungChung/api.js" defer></script>
+<script src="../../DungChung/auth.js" defer></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#383b34">
+  <title>Đăng ký | N9 Studio</title>
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../DungChung/footer.css">
+</head>
+<body>
+  <span id="n9-page-top" aria-hidden="true"></span>
+  <div class="page">
+    <svg class="flow-ribbons" viewBox="0 0 1024 572" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="ribbon-spectrum" x1="0" y1="0" x2="1" y2=".2">
+          <stop offset="0" stop-color="#c27bff"/>
+          <stop offset=".34" stop-color="#c9e8d6"/>
+          <stop offset=".68" stop-color="#baff88"/>
+          <stop offset="1" stop-color="#e6d6ff"/>
+        </linearGradient>
+        <filter id="ribbon-blur"><feGaussianBlur stdDeviation="5"/></filter>
+      </defs>
+      <g>
+        <path class="ribbon-base" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-glow" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-light" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-glow ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-light ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-glow ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-light ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+      </g>
+    </svg>
+    <div class="site-dock-wrap">
+      <a class="site-brand" href="../TrangChu/index.html" aria-label="Về trang chủ">
+        <img src="../../Images/logo-thoi-trang.png" alt="N9 Studio">
+      </a>
+      <nav class="site-dock" aria-label="Điều hướng chính">
+        <a class="site-dock-item" href="../TrangChu/index.html">Trang chủ</a>
+        <a class="site-dock-item" href="../SanPham/index.html">Sản phẩm</a>
+        <a class="site-dock-item" href="../GioHang/index.html">Giỏ hàng</a>
+        <a class="site-dock-item" href="../DonHang/index.html">Đơn hàng của tôi</a>
+        <a class="site-dock-item" href="../TaiKhoan/index.html">Tài khoản</a>
+        <a class="site-dock-item" href="../DangNhap/index.html">Đăng nhập</a>
+        <a class="site-dock-item" href="../DangKy/index.html" aria-current="page">Đăng ký</a>
+      </nav>
+      <div class="site-dock-actions" role="group" aria-label="Tìm kiếm và giỏ hàng">
+        <a class="site-dock-action" href="../SanPham/index.html" aria-label="Tìm kiếm sản phẩm" title="Tìm kiếm sản phẩm">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.2 4.2"/></svg>
+        </a>
+        <a class="site-dock-action site-cart-action" href="../GioHang/index.html" aria-label="Giỏ hàng" title="Giỏ hàng">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="9.5" cy="19" r="1"/><circle cx="18" cy="19" r="1"/></svg>
+          <span id="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="auth-card" aria-labelledby="form-title">
+        <aside class="visual">
+          <p class="visual-kicker">Thời trang &amp; phong cách</p>
+          <div class="visual-copy">
+            <p class="eyebrow">Nét đẹp của cuộc sống</p>
+            <h2>Phong cách của riêng bạn bắt đầu từ đây.</h2>
+            <p>Khám phá những thiết kế được chọn lọc và tìm cảm hứng cho phong cách mỗi ngày.</p>
+          </div>
+          <p class="visual-note">CHẤT LIỆU TINH TẾ · PHONG CÁCH BỀN LÂU</p>
+        </aside>
+
+        <div class="form-panel">
+          <a class="panel-logo" href="../TrangChu/index.html" aria-label="Về trang chủ">
+            <img src="../../Images/logo-thoi-trang.png" alt="">
+          </a>
+          <p class="eyebrow">Tạo tài khoản</p>
+          <h1 id="form-title">Đăng ký</h1>
+          <p class="intro">Tạo tài khoản để bắt đầu hành trình tìm phong cách phù hợp với bạn.</p>
+
+          <form class="form" id="auth-form" data-auth-mode="register">
+            <div class="field">
+              <label for="full-name">HỌ VÀ TÊN</label>
+              <div class="input-shell">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+                </span>
+                <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="Nguyễn Minh Anh" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">EMAIL</label>
+              <div class="input-shell">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4.5 7 7.5 6 7.5-6"/></svg>
+                </span>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="ban@example.com" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="password">MẬT KHẨU</label>
+              <div class="input-shell">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v2"/></svg>
+                </span>
+                <input id="password" name="password" type="password" autocomplete="new-password" placeholder="Ít nhất 8 ký tự" minlength="8" required>
+                <button class="password-toggle" type="button" data-password-toggle aria-controls="password" aria-label="Hiện mật khẩu" aria-pressed="false">
+                  <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
+                  <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 6.2A9.8 9.8 0 0 1 12 6c6.1 0 9.5 6 9.5 6a16 16 0 0 1-3.1 3.7M6.2 6.5C3.8 8.1 2.5 12 2.5 12s3.4 6 9.5 6c1.2 0 2.3-.2 3.3-.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="field">
+              <label for="confirm-password">XÁC NHẬN MẬT KHẨU</label>
+              <div class="input-shell">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v2"/></svg>
+                </span>
+                <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Nhập lại mật khẩu" minlength="8" required>
+                <button class="password-toggle" type="button" data-password-toggle aria-controls="confirm-password" aria-label="Hiện mật khẩu" aria-pressed="false">
+                  <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
+                  <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 6.2A9.8 9.8 0 0 1 12 6c6.1 0 9.5 6 9.5 6a16 16 0 0 1-3.1 3.7M6.2 6.5C3.8 8.1 2.5 12 2.5 12s3.4 6 9.5 6c1.2 0 2.3-.2 3.3-.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+                </button>
+              </div>
+            </div>
+            <label class="check-option">
+              <input name="terms" type="checkbox" required>
+              <span>Tôi đồng ý với các điều khoản sử dụng.</span>
+            </label>
+            <button class="submit" type="submit">TẠO TÀI KHOẢN</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <p class="switch-auth">Đã có tài khoản? <a class="text-link" href="../DangNhap/index.html">Đăng nhập</a></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+<footer class="n9-footer" aria-label="Thông tin N9 Studio">
+      <div class="n9-footer-inner">
+        <div class="n9-footer-main">
+          <section class="n9-footer-about" aria-labelledby="n9-brand-name">
+            <a class="n9-footer-brand" href="../TrangChu/index.html" aria-label="N9 Studio — Trang chủ">
+              <img src="../../Images/logo-thoi-trang.png" alt="" width="60" height="60" loading="lazy">
+              <span id="n9-brand-name">N9 Studio</span>
+            </a>
+            <p class="n9-footer-description">Những thiết kế tinh tế, đồng hành cùng bạn qua từng khoảnh khắc.</p>
+            <div class="n9-footer-socials" aria-label="Kết nối N9 Studio">
+              <a href="https://www.facebook.com/huyit205" target="_blank" rel="noopener noreferrer" aria-label="Facebook N9 Studio (mở tab mới)">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.5-4H14V7c0-1 .4-1.5 1.7-1.5H18V2.1c-.5-.1-1.7-.1-3-.1-3 0-5 1.8-5 5v2H7v4h3v8"/></svg><span>Facebook</span>
+              </a>
+              <a href="https://zalo.me/84374290105" target="_blank" rel="noopener noreferrer" aria-label="Zalo N9 Studio, +84 374 290 105 (mở tab mới)">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H5l-3 2 1-5.5A8.5 8.5 0 1 1 21 11.5Z"/><path d="M7 8h7l-7 7h7"/></svg><span>Zalo</span>
+              </a>
+            </div>
+          </section>
+          <section class="n9-footer-contact" aria-labelledby="n9-contact-title">
+            <h2 id="n9-contact-title">Liên hệ</h2>
+            <address>
+              <p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Trường Đại học Nghệ An</span></p>
+              <p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a14 14 0 0 1-7-7l2-2-2-5Z"/></svg><a href="tel:+84347799850">0347799850</a></p>
+              <p><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><a href="mailto:tnq89129@gmail.com">tnq89129@gmail.com</a></p>
+              <p><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><time datetime="07:00">07:00</time>–<time datetime="22:00">22:00</time>, hằng ngày</span></p>
+              <p class="n9-zalo-number"><span>Zalo:</span><a href="https://zalo.me/84374290105" target="_blank" rel="noopener noreferrer">+84 374 290 105</a></p>
+            </address>
+          </section>
+          <nav class="n9-footer-nav" aria-labelledby="n9-explore-title">
+            <h2 id="n9-explore-title">Khám phá</h2>
+            <a href="../TrangChu/index.html">Trang chủ</a><a href="../SanPham/index.html">Sản phẩm</a><a href="../GioHang/index.html">Giỏ hàng</a>
+          </nav>
+          <nav class="n9-footer-nav" aria-labelledby="n9-support-title">
+            <h2 id="n9-support-title">Hỗ trợ</h2>
+            <a href="../DonHang/index.html">Đơn hàng của tôi</a><a href="../TaiKhoan/index.html">Tài khoản</a><a href="../DangNhap/index.html">Đăng nhập</a><a href="../DangKy/index.html">Đăng ký</a>
+          </nav>
+        </div>
+        <div class="n9-footer-bottom"><span>© 2026 N9 Studio</span><a href="#n9-page-top">Lên đầu trang <span aria-hidden="true">↑</span></a></div>
+      </div>
+    </footer>
+</body>
+</html>

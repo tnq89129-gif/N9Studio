@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#383b34">
+  <meta name="description" content="Quản lý tài khoản và truy cập các tiện ích mua sắm của bạn.">
+  <title>Tài khoản | Thời trang — Nét đẹp của cuộc sống</title>
+  <link rel="stylesheet" href="../../DungChung/auth.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../DungChung/auth.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page account-page">
+    <svg class="flow-ribbons" viewBox="0 0 1024 572" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="ribbon-spectrum" x1="0" y1="0" x2="1" y2=".2">
+          <stop offset="0" stop-color="#c27bff"/>
+          <stop offset=".34" stop-color="#c9e8d6"/>
+          <stop offset=".68" stop-color="#baff88"/>
+          <stop offset="1" stop-color="#e6d6ff"/>
+        </linearGradient>
+        <filter id="ribbon-blur"><feGaussianBlur stdDeviation="5"/></filter>
+      </defs>
+      <g>
+        <path class="ribbon-base" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-glow" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-light" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-glow ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-light ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-glow ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-light ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+      </g>
+    </svg>
+
+    <div class="site-dock-wrap">
+      <a class="site-brand" href="../TrangChu/index.html" aria-label="Về trang chủ">
+        <img src="../../Images/logo-thoi-trang.png" alt="Thời trang — Nét đẹp của cuộc sống">
+      </a>
+      <nav class="site-dock" aria-label="Điều hướng chính">
+        <a class="site-dock-item" href="../TrangChu/index.html">Trang chủ</a>
+        <a class="site-dock-item" href="../SanPham/index.html">Sản phẩm</a>
+        <a class="site-dock-item" href="../GioHang/index.html">Giỏ hàng</a>
+        <a class="site-dock-item" href="../DonHang/index.html">Đơn hàng của tôi</a>
+        <a class="site-dock-item" href="index.html" aria-current="page">Tài khoản</a>
+        <a class="site-dock-item" href="../DangNhap/index.html">Đăng nhập</a>
+        <a class="site-dock-item" href="../DangKy/index.html">Đăng ký</a>
+      </nav>
+      <div class="site-dock-actions" role="group" aria-label="Tìm kiếm và giỏ hàng">
+        <a class="site-dock-action" href="../SanPham/index.html#product-list" aria-label="Tìm kiếm sản phẩm" title="Tìm kiếm sản phẩm">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.2 4.2"/></svg>
+        </a>
+        <a class="site-dock-action site-cart-action" href="../GioHang/index.html" aria-label="Giỏ hàng" title="Giỏ hàng">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="9.5" cy="19" r="1"/><circle cx="18" cy="19" r="1"/></svg>
+          <span id="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+
+    <main class="account-main">
+      <header class="account-heading">
+        <p class="eyebrow">KHÔNG GIAN CỦA BẠN</p>
+        <h1>Tài khoản</h1>
+        <p>Quản lý thông tin và tiếp tục hành trình mua sắm của bạn.</p>
+      </header>
+
+      <section class="account-card" aria-labelledby="account-status-title">
+        <div class="account-avatar" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+        </div>
+        <div class="account-status">
+          <p class="account-label">TRẠNG THÁI TÀI KHOẢN</p>
+          <h2 id="account-status-title">Bạn chưa đăng nhập</h2>
+          <p id="account-description">Đăng nhập để xem thông tin tài khoản và các lựa chọn mua sắm của bạn.</p>
+          <div class="account-actions" id="account-actions">
+            <a class="account-button account-button--primary" href="../DangNhap/index.html">Đăng nhập</a>
+            <a class="account-button account-button--secondary" href="../DangKy/index.html">Tạo tài khoản</a>
+            <button class="account-button account-button--secondary" id="account-logout" type="button" data-logout hidden>Đăng xuất</button>
+          </div>
+          <p class="account-note" id="account-note">Tài khoản được lưu trên trình duyệt này trong bản demo.</p>
+        </div>
+      </section>
+
+      <section class="account-links" aria-label="Lối tắt mua sắm">
+        <a class="account-link-card" href="../DonHang/index.html">
+          <span class="account-link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8m-8 4h5"/></svg>
+          </span>
+          <span><strong>Đơn hàng của tôi</strong><small>Theo dõi các đơn hàng đã đặt</small></span>
+          <span class="account-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="account-link-card" href="../GioHang/index.html">
+          <span class="account-link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="9.5" cy="19" r="1"/><circle cx="18" cy="19" r="1"/></svg>
+          </span>
+          <span><strong>Giỏ hàng</strong><small>Xem các sản phẩm bạn đã chọn</small></span>
+          <span class="account-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="account-link-card" href="../SanPham/index.html">
+          <span class="account-link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 8h16l-1 12H5L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          </span>
+          <span><strong>Khám phá sản phẩm</strong><small>Tìm cảm hứng cho phong cách của bạn</small></span>
+          <span class="account-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="account-link-card" href="../../QuanTri/TongQuan/index.html">
+          <span class="account-link-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+          </span>
+          <span><strong>Khu vực quản trị</strong><small>Quản lý cửa hàng trong bản demo</small></span>
+          <span class="account-arrow" aria-hidden="true">→</span>
+        </a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+.account-main {
+  position: relative;
+  z-index: 1;
+  width: min(980px, calc(100% - 40px));
+  margin: 34px auto 88px;
+}
+
+.account-heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.account-heading .eyebrow,
+.account-label {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
+}
+
+.account-heading h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 400;
+  letter-spacing: -.04em;
+}
+
+.account-heading > p:last-child {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.account-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .035));
+  box-shadow: 0 24px 70px rgba(8, 12, 6, .2);
+  backdrop-filter: blur(14px);
+}
+
+.account-avatar {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  flex: 0 0 62px;
+  place-items: center;
+  border: 1px solid rgba(201, 232, 214, .35);
+  border-radius: 50%;
+  color: var(--accent);
+  background: rgba(201, 232, 214, .1);
+}
+
+.account-avatar svg,
+.account-link-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.account-status {
+  min-width: 0;
+}
+
+.account-label {
+  margin: 0 0 8px;
+  color: rgba(247, 248, 243, .56);
+  font-size: 9px;
+}
+
+.account-status h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(21px, 3vw, 28px);
+  font-weight: 400;
+}
+
+.account-status > p:not(.account-label):not(.account-note) {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.account-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 22px;
+}
+
+.account-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.account-button:hover,
+.account-link-card:hover {
+  transform: translateY(-2px);
+}
+
+.account-button--primary {
+  color: #23261f;
+  background: var(--accent);
+}
+
+.account-button--primary:hover {
+  background: #dcf4e4;
+}
+
+.account-button--secondary {
+  border-color: rgba(255, 255, 255, .2);
+  color: var(--ink);
+  background: rgba(255, 255, 255, .06);
+}
+
+.account-button--secondary:hover {
+  border-color: rgba(255, 255, 255, .42);
+  background: rgba(255, 255, 255, .11);
+}
+
+.account-note {
+  margin: 18px 0 0;
+  color: rgba(247, 248, 243, .5);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.account-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.account-link-card {
+  display: flex;
+  min-height: 102px;
+  align-items: center;
+  gap: 13px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 18px;
+  color: var(--ink);
+  background: rgba(31, 37, 28, .68);
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.account-link-card:hover {
+  border-color: rgba(201, 232, 214, .42);
+  background: rgba(44, 53, 40, .84);
+}
+
+.account-link-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 13px;
+  color: var(--accent);
+  background: rgba(201, 232, 214, .1);
+}
+
+.account-link-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.account-link-card strong,
+.account-link-card small {
+  display: block;
+}
+
+.account-link-card strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.account-link-card small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.account-arrow {
+  margin-left: auto;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+@media (max-width: 760px) {
+  .account-main {
+    margin-top: 18px;
+    margin-bottom: 54px;
+  }
+
+  .account-card {
+    gap: 16px;
+    border-radius: 19px;
+  }
+
+  .account-avatar {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+
+  .account-avatar svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .account-links {
+    grid-template-columns: 1fr;
+  }
+
+  .account-link-card {
+    min-height: 82px;
+  }
+}
+
+@media (max-width: 480px) {
+  .account-main {
+    width: min(100% - 28px, 980px);
+  }
+
+  .account-card {
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .account-actions {
+    width: 100%;
+  }
+
+  .account-button {
+    flex: 1;
+    padding: 0 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .account-button,
+  .account-link-card {
+    transition: none;
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#383b34">
+  <meta name="description" content="Theo dõi các đơn hàng của bạn tại Thời trang — Nét đẹp của cuộc sống.">
+  <title>Đơn hàng của tôi | Thời trang — Nét đẹp của cuộc sống</title>
+  <link rel="stylesheet" href="../../DungChung/auth.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../DungChung/auth.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page orders-page">
+    <svg class="flow-ribbons" viewBox="0 0 1024 572" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="ribbon-spectrum" x1="0" y1="0" x2="1" y2=".2">
+          <stop offset="0" stop-color="#c27bff"/>
+          <stop offset=".34" stop-color="#c9e8d6"/>
+          <stop offset=".68" stop-color="#baff88"/>
+          <stop offset="1" stop-color="#e6d6ff"/>
+        </linearGradient>
+        <filter id="ribbon-blur"><feGaussianBlur stdDeviation="5"/></filter>
+      </defs>
+      <g>
+        <path class="ribbon-base" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-glow" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-light" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-glow ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-light ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-glow ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-light ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+      </g>
+    </svg>
+
+    <div class="site-dock-wrap">
+      <a class="site-brand" href="../TrangChu/index.html" aria-label="Về trang chủ">
+        <img src="../../Images/logo-thoi-trang.png" alt="Thời trang — Nét đẹp của cuộc sống">
+      </a>
+      <nav class="site-dock" aria-label="Điều hướng chính">
+        <a class="site-dock-item" href="../TrangChu/index.html">Trang chủ</a>
+        <a class="site-dock-item" href="../SanPham/index.html">Sản phẩm</a>
+        <a class="site-dock-item" href="../GioHang/index.html">Giỏ hàng</a>
+        <a class="site-dock-item" href="../DonHang/index.html" aria-current="page">Đơn hàng của tôi</a>
+        <a class="site-dock-item" href="../TaiKhoan/index.html">Tài khoản</a>
+        <a class="site-dock-item" href="../DangNhap/index.html">Đăng nhập</a>
+        <a class="site-dock-item" href="../DangKy/index.html">Đăng ký</a>
+      </nav>
+      <div class="site-dock-actions" role="group" aria-label="Tìm kiếm và giỏ hàng">
+        <a class="site-dock-action" href="../SanPham/index.html#product-list" aria-label="Tìm kiếm sản phẩm" title="Tìm kiếm sản phẩm">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.2 4.2"/></svg>
+        </a>
+        <a class="site-dock-action site-cart-action" href="../GioHang/index.html" aria-label="Giỏ hàng" title="Giỏ hàng">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="9.5" cy="19" r="1"/><circle cx="18" cy="19" r="1"/></svg>
+          <span id="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+
+    <main class="orders-main">
+      <header class="orders-heading">
+        <p class="eyebrow">THEO DÕI HÀNH TRÌNH MUA SẮM</p>
+        <h1>Đơn hàng của tôi</h1>
+        <p id="orders-count" aria-live="polite"></p>
+      </header>
+      <div class="orders-error" id="orders-error" role="alert" hidden></div>
+      <section class="orders-list" id="orders-list" aria-label="Danh sách đơn hàng"></section>
+      <section class="orders-empty" id="orders-empty" hidden>
+        <div class="orders-empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8m-8 4h5"/></svg>
+        </div>
+        <h2>Bạn chưa có đơn hàng nào</h2>
+        <p id="orders-empty-description">Đơn hàng sẽ hiển thị tại đây sau khi bạn hoàn tất đặt hàng.</p>
+        <a id="orders-login-link" href="../DangNhap/index.html" hidden>Đăng nhập để xem đơn hàng</a>
+        <a href="../SanPham/index.html">Khám phá sản phẩm</a>
+      </section>
+    </main>
+
+    <footer class="orders-footer">
+      <span>THỜI TRANG — NÉT ĐẸP CỦA CUỘC SỐNG</span>
+      <a href="../TrangChu/index.html">Trở về trang chủ</a>
+    </footer>
+  </div>
+</body>
+</html>

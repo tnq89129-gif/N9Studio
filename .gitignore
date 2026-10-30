@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+.vs/
+*.user
+**/node_modules/
+**/__pycache__/
+**/App_Data/ThuThuNghiem/
+.env
+.env.*
+*.eml

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#383b34">
+  <meta name="description" content="Xem danh sách khách hàng và lịch sử đơn hàng của cửa hàng.">
+  <title>Quản lý khách hàng | Quản trị cửa hàng</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="../../DungChung/admin-nav.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="admin-shell">
+    <svg class="flow-ribbons" viewBox="0 0 1024 572" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="ribbon-spectrum" x1="0" y1="0" x2="1" y2=".2">
+          <stop offset="0" stop-color="#c27bff"/>
+          <stop offset=".34" stop-color="#c9e8d6"/>
+          <stop offset=".68" stop-color="#baff88"/>
+          <stop offset="1" stop-color="#e6d6ff"/>
+        </linearGradient>
+        <filter id="ribbon-blur"><feGaussianBlur stdDeviation="5"/></filter>
+      </defs>
+      <g>
+        <path class="ribbon-base" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-glow" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-light" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-glow ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-light ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-glow ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-light ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+      </g>
+    </svg>
+
+    <aside class="sidebar" aria-label="Điều hướng quản trị">
+      <a class="admin-brand" href="../TongQuan/index.html" aria-label="Tổng quan quản trị">
+        <img class="brand-logo" src="../../Images/logo-thoi-trang.png" alt="Thời Trang & Phong Cách">
+        <span class="brand-copy"><strong>KHU VỰC QUẢN TRỊ</strong></span>
+      </a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="admin-nav">
+        <a class="admin-nav-link" href="../TongQuan/index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+          <span>Tổng quan</span>
+        </a>
+        <a class="admin-nav-link" href="../SanPham/index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l-1 12H5L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          <span>Sản phẩm</span>
+        </a>
+        <a class="admin-nav-link" href="../DonHang/index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8m-8 4h5"/></svg>
+          <span>Đơn hàng</span>
+        </a>
+        <a class="admin-nav-link is-active" href="../KhachHang/index.html" aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0m2-10a3 3 0 1 0 0-6m1 9a5.4 5.4 0 0 1 3 4.9"/></svg>
+          <span>Khách hàng</span>
+        </a>
+        <a class="admin-nav-link" href="../DanhGia/index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg>
+          <span>Đánh giá</span>
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="admin-profile">
+          <span class="profile-avatar" aria-hidden="true">QT</span>
+          <span class="profile-copy"><strong>Quản trị viên</strong><small>Bảng điều khiển</small></span>
+        </div>
+        <a class="store-link" href="../../NguoiDung/TrangChu/index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v14h-5M10 8l4 4-4 4m4-4H4"/></svg>
+          <span>Về cửa hàng</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="dashboard">
+      <header class="topbar">
+        <div class="breadcrumbs"><a href="../TongQuan/index.html">Quản trị</a><span aria-hidden="true">/</span><strong>Khách hàng</strong></div>
+        <div class="topbar-actions">
+          <span class="today-label" id="today-label"></span>
+          <button class="refresh-button" id="refresh-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.6 9a7 7 0 0 1 11.8-2L20 12M4 12l2.6 5a7 7 0 0 0 11.8-2"/></svg>
+            <span>Làm mới</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="dashboard-content">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">QUAN HỆ KHÁCH HÀNG</p>
+            <h1>Khách hàng</h1>
+            <p class="page-subtitle">Xem thông tin liên hệ và lịch sử mua hàng của khách.</p>
+          </div>
+        </div>
+        <div class="dashboard-error" id="customers-error" role="alert" hidden></div>
+        <div class="customer-note" role="note">Danh sách được tổng hợp từ thông tin khách hàng trong các đơn đã lưu trên trình duyệt này.</div>
+
+        <section class="customer-admin-stats" aria-label="Tổng quan khách hàng">
+          <article class="product-stat"><span>Tổng khách hàng</span><strong id="total-customers">0</strong></article>
+          <article class="product-stat"><span>Khách quay lại</span><strong id="repeat-customers">0</strong></article>
+          <article class="product-stat"><span>Tổng đơn hàng</span><strong id="customer-orders">0</strong></article>
+          <article class="product-stat"><span>Doanh số không hủy</span><strong id="customer-revenue">0₫</strong></article>
+        </section>
+
+        <section class="product-panel customer-panel" aria-labelledby="customers-table-title">
+          <div class="product-toolbar">
+            <div>
+              <h2 id="customers-table-title">Danh sách khách hàng</h2>
+              <p id="customers-count" aria-live="polite">0 khách hàng</p>
+            </div>
+            <div class="product-controls">
+              <label class="product-search">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.2 4.2"/></svg>
+                <span class="visually-hidden">Tìm khách hàng</span>
+                <input id="customer-search" type="search" placeholder="Tìm tên, email hoặc số điện thoại..." autocomplete="off">
+              </label>
+              <label class="filter-select">
+                <span class="visually-hidden">Lọc nhóm khách hàng</span>
+                <select id="customer-filter">
+                  <option value="all">Tất cả khách hàng</option>
+                  <option value="repeat">Khách quay lại</option>
+                  <option value="new">Mua một lần</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="products-table-wrap">
+            <table class="products-table customers-table">
+              <thead><tr><th>KHÁCH HÀNG</th><th>LIÊN HỆ</th><th>SỐ ĐƠN</th><th>DOANH SỐ</th><th>ĐƠN GẦN NHẤT</th><th class="actions-heading">THAO TÁC</th></tr></thead>
+              <tbody id="customers-list"></tbody>
+            </table>
+          </div>
+          <div class="products-empty" id="customers-empty" hidden>
+            <span class="empty-icon" aria-hidden="true">◇</span>
+            <strong>Chưa có khách hàng phù hợp</strong>
+            <span>Khách hàng sẽ xuất hiện khi đơn hàng có thông tin người mua.</span>
+          </div>
+        </section>
+        <p class="data-note">Đăng ký tài khoản hiện là giao diện mẫu; khách hàng được tổng hợp từ đơn hàng hiện có.</p>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="customer-dialog" id="customer-dialog" aria-labelledby="customer-dialog-title">
+    <div class="customer-dialog-content">
+      <header class="dialog-heading">
+        <div><p class="eyebrow">HỒ SƠ KHÁCH HÀNG</p><h2 id="customer-dialog-title">Thông tin khách hàng</h2></div>
+        <button class="dialog-close" id="close-customer-dialog" type="button" aria-label="Đóng">×</button>
+      </header>
+      <div id="customer-detail-content"></div>
+    </div>
+  </dialog>
+</body>
+</html>

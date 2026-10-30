@@ -1,0 +1,38 @@
+using Backend.Contracts;
+using Backend.Controllers;
+using Backend.Data;
+using Backend.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+static void Check(bool value,string message){if(!value)throw new Exception(message);}
+await using var connection=new SqliteConnection("Data Source=:memory:");await connection.OpenAsync();
+var options=new DbContextOptionsBuilder<ShopDbContext>().UseSqlite(connection).Options;
+await using var db=new ShopDbContext(options);await db.Database.EnsureCreatedAsync();
+var category=new Category{Name="Áo",Code="ao"};db.Categories.Add(category);await db.SaveChangesAsync();
+var admin=new AdminController(db);var catalog=new CatalogController(db);
+ProductRequest Request(List<ProductVariantRequest> rows,string tag="Mới",string name="Áo thử")=>new(name,"Cotton","/images/7.jpg",category.Id,true,tag,rows);
+Check(await admin.AddProduct(Request([new("M","Đen",199000,5),new("L","Đen",209000,2)])) is OkObjectResult,"Atomic create");
+db.ChangeTracker.Clear();var p=await db.Products.Include(x=>x.Variants).SingleAsync();
+Check(p.Tag=="Mới"&&p.Variants.Count==2,"Tag and variants persisted");
+Check(await catalog.Detail(p.Id) is OkObjectResult,"New product appears in storefront");
+var m=p.Variants.Single(x=>x.Size=="M");var l=p.Variants.Single(x=>x.Size=="L");
+Check(await admin.EditProduct(p.Id,Request([new("M","Đen",219000,10,true,m.Id),new("L","Đen",229000,0,true,l.Id)],"Bán chạy")) is NoContentResult,"Edit price stock tag");
+db.ChangeTracker.Clear();p=await db.Products.Include(x=>x.Variants).SingleAsync();
+Check(p.Tag=="Bán chạy"&&p.Variants.Single(x=>x.Id==m.Id).Price==219000,"Updated values preserved");
+// Invalid edit must roll back metadata and not alter inventory.
+Check(await admin.EditProduct(p.Id,Request([new("M","Đen",100,3,true,m.Id),new("m","đen",200,4,true,l.Id)],"Sai","Không được lưu")) is BadRequestObjectResult,"Reject duplicate size/color");
+db.ChangeTracker.Clear();p=await db.Products.Include(x=>x.Variants).SingleAsync();Check(p.Name=="Áo thử"&&p.Tag=="Bán chạy"&&p.Variants.Single(x=>x.Id==m.Id).Stock==10,"No partial edit");
+var count=await db.Products.CountAsync();
+Check(await admin.AddProduct(Request([new(" ","Đen",100,1)],"Sai","Invalid")) is BadRequestObjectResult,"Reject blank size");
+db.ChangeTracker.Clear();Check(await db.Products.CountAsync()==count,"No orphan metadata");
+Check(await admin.EditProduct(p.Id,Request([new("L","Đen",200,3,true,m.Id),new("M","Đen",300,4,true,l.Id)])) is NoContentResult,"Swap unique keys atomically");
+db.ChangeTracker.Clear();p=await db.Products.Include(x=>x.Variants).SingleAsync();Check(p.Variants.Single(x=>x.Id==m.Id).Size=="L","Variant IDs preserved after swap");
+Check(await admin.EditProduct(p.Id,Request([new("L","Đen",200,3,true,m.Id)])) is NoContentResult,"Omitted variant is soft hidden");
+db.ChangeTracker.Clear();Check(!(await db.Variants.SingleAsync(x=>x.Id==l.Id)).IsActive,"History row retained");
+Check(await admin.EditProduct(p.Id,Request([new("L","Đen",200,3,true,m.Id),new("M","Đen",300,4)])) is NoContentResult,"Restore existing size/color without duplicating identity");
+db.ChangeTracker.Clear();Check(await db.Variants.CountAsync()==2,"No duplicate variant");
+Check(await admin.AddProduct(Request([])) is BadRequestObjectResult,"Visible product needs active variants");
+Check(await admin.EditProduct(p.Id,new ProductRequest("Tên mới","Cotton","/images/7.jpg",category.Id,true)) is NoContentResult,"Legacy metadata-only edits remain supported");
+db.ChangeTracker.Clear();p=await db.Products.Include(x=>x.Variants).SingleAsync();Check(p.Tag=="Mới"&&p.Variants.Count==2,"Legacy edit preserves tag and variants");
+Console.WriteLine("PASS atomic product/variant/tag create+edit, inventory, storefront visibility, validation rollback, key swaps, history retention and legacy requests. SQLite used; SQL Server schema update not tested.");

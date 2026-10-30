@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#383b34">
+  <meta name="description" content="Khám phá bộ sưu tập thời trang được chọn lọc từ Thời trang — Nét đẹp của cuộc sống.">
+  <title>Sản phẩm | Thời trang — Nét đẹp của cuộc sống</title>
+  <link rel="stylesheet" href="../../DungChung/auth.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../DungChung/reviews.js" defer></script>
+  <script src="../../DungChung/products.js" defer></script>
+  <script src="../../DungChung/auth.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page products-page" id="top">
+    <svg class="flow-ribbons" viewBox="0 0 1024 572" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="ribbon-spectrum" x1="0" y1="0" x2="1" y2=".2">
+          <stop offset="0" stop-color="#c27bff"/>
+          <stop offset=".34" stop-color="#c9e8d6"/>
+          <stop offset=".68" stop-color="#baff88"/>
+          <stop offset="1" stop-color="#e6d6ff"/>
+        </linearGradient>
+        <filter id="ribbon-blur"><feGaussianBlur stdDeviation="5"/></filter>
+      </defs>
+      <g>
+        <path class="ribbon-base" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-glow" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-light" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-glow ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-light ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-glow ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-light ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+      </g>
+    </svg>
+
+    <div class="site-dock-wrap">
+      <a class="site-brand" href="../TrangChu/index.html" aria-label="Về trang chủ">
+        <img src="../../Images/logo-thoi-trang.png" alt="Thời trang — Nét đẹp của cuộc sống">
+      </a>
+      <nav class="site-dock" aria-label="Điều hướng chính">
+        <a class="site-dock-item" href="../TrangChu/index.html">Trang chủ</a>
+        <a class="site-dock-item" href="../SanPham/index.html" aria-current="page">Sản phẩm</a>
+        <a class="site-dock-item" href="../GioHang/index.html">Giỏ hàng</a>
+        <a class="site-dock-item" href="../DonHang/index.html">Đơn hàng của tôi</a>
+        <a class="site-dock-item" href="../TaiKhoan/index.html">Tài khoản</a>
+        <a class="site-dock-item" href="../DangNhap/index.html">Đăng nhập</a>
+        <a class="site-dock-item" href="../DangKy/index.html">Đăng ký</a>
+      </nav>
+      <div class="site-dock-actions" role="group" aria-label="Tìm kiếm và giỏ hàng">
+        <a class="site-dock-action" href="../SanPham/index.html#product-list" aria-label="Tìm kiếm sản phẩm" title="Tìm kiếm sản phẩm">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.2 4.2"/></svg>
+        </a>
+        <a class="site-dock-action site-cart-action" href="../GioHang/index.html" aria-label="Giỏ hàng" title="Giỏ hàng">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="9.5" cy="19" r="1"/><circle cx="18" cy="19" r="1"/></svg>
+          <span id="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+
+    <main class="products-main">
+      <section class="collection-intro" aria-labelledby="collection-title">
+        <p class="eyebrow">BỘ SƯU TẬP ĐƯỢC CHỌN LỌC</p>
+        <h1 id="collection-title">Mặc điều khiến bạn<br><span>là chính mình.</span></h1>
+        <p class="collection-description">Những thiết kế tinh tế, dễ kết hợp và đồng hành cùng bạn qua từng khoảnh khắc.</p>
+        <a class="collection-link" href="#product-list">
+          Khám phá bộ sưu tập
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </a>
+        <span class="collection-index" aria-hidden="true">01 / 06</span>
+      </section>
+
+      <section class="catalog" id="product-list" aria-labelledby="catalog-title">
+        <div class="catalog-heading">
+          <div>
+            <p class="eyebrow">THỜI TRANG &amp; PHONG CÁCH</p>
+            <h2 id="catalog-title">Sản phẩm nổi bật</h2>
+          </div>
+          <label class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.2 4.2"/></svg>
+            <span class="visually-hidden">Tìm sản phẩm</span>
+            <input type="search" id="product-search" placeholder="Tìm sản phẩm..." autocomplete="off">
+          </label>
+        </div>
+
+        <div class="catalog-tools">
+          <div class="filters" role="group" aria-label="Lọc theo danh mục">
+            <button class="filter is-selected" type="button" data-filter="all" aria-pressed="true">Tất cả</button>
+            <button class="filter" type="button" data-filter="women" aria-pressed="false">Thời trang nữ</button>
+            <button class="filter" type="button" data-filter="men" aria-pressed="false">Thời trang nam</button>
+            <button class="filter" type="button" data-filter="outerwear" aria-pressed="false">Áo khoác</button>
+          </div>
+          <p class="result-count" id="result-count" aria-live="polite">6 thiết kế</p>
+        </div>
+
+        <p class="empty-state" id="products-load-error" role="alert" hidden></p>
+        <div class="product-grid" id="product-grid"></div>
+        <p class="empty-state" id="empty-state" hidden>Không tìm thấy sản phẩm phù hợp. Hãy thử từ khóa khác nhé.</p>
+      </section>
+    </main>
+
+    <dialog class="product-dialog" id="product-dialog" aria-labelledby="detail-name">
+      <div class="product-detail">
+        <button class="detail-close" type="button" data-close-detail aria-label="Đóng chi tiết sản phẩm">×</button>
+        <div class="detail-media">
+          <div class="detail-image-wrap">
+            <img class="detail-image" id="detail-image" src="" alt="">
+          </div>
+        </div>
+        <div class="detail-content">
+          <p class="product-category" id="detail-category"></p>
+          <h2 id="detail-name"></h2>
+          <p class="detail-rating" id="detail-rating"></p>
+          <p class="detail-price" id="detail-price"></p>
+          <p class="detail-description" id="detail-description"></p>
+          <form id="detail-form">
+            <label class="detail-label" for="detail-size">Kích cỡ</label>
+            <select id="detail-size" name="size" required>
+              <option value="">Chọn kích cỡ</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XXL">XXL</option>
+            </select>
+            <label class="detail-label" for="detail-color">Màu sắc</label>
+            <select id="detail-color" name="color" required>
+              <option value="">Chọn màu sắc</option>
+            </select>
+            <button class="detail-add-button" type="submit">Thêm vào giỏ hàng</button>
+          </form>
+          <section class="detail-reviews" aria-labelledby="detail-reviews-title">
+            <h3 id="detail-reviews-title">Nhận xét tham khảo</h3>
+            <p class="review-note">Nội dung minh họa, chưa phải đánh giá thực tế từ khách hàng.</p>
+            <div class="review-list" id="detail-review-list"></div>
+          </section>
+        </div>
+      </div>
+    </dialog>
+    <div class="toast" id="cart-toast" role="status" aria-live="polite"></div>
+    <footer class="products-footer">
+      <div class="products-footer-main">
+        <div class="products-footer-about">
+          <a class="products-footer-brand" href="../TrangChu/index.html" aria-label="Thời trang &amp; Phong cách - Trang chủ">
+            <img src="../../Images/logo-thoi-trang.png" alt="Thời trang &amp; Phong cách">
+            <span>THỜI TRANG &amp; PHONG CÁCH</span>
+          </a>
+          <p class="products-footer-description">Những thiết kế tinh tế, đồng hành cùng bạn qua từng khoảnh khắc.</p>
+        </div>
+        <nav class="products-footer-links" aria-label="Liên kết cửa hàng">
+          <div class="products-footer-column">
+            <h2>Khám phá</h2>
+            <a href="../TrangChu/index.html">Trang chủ</a>
+            <a href="#product-list">Sản phẩm</a>
+            <a href="../GioHang/index.html">Giỏ hàng</a>
+          </div>
+          <div class="products-footer-column">
+            <h2>Hỗ trợ</h2>
+            <a href="../DonHang/index.html">Đơn hàng của tôi</a>
+            <a href="../TaiKhoan/index.html">Tài khoản</a>
+            <a href="../DangNhap/index.html">Đăng nhập</a>
+            <a href="../DangKy/index.html">Đăng ký</a>
+          </div>
+        </nav>
+      </div>
+      <div class="products-footer-bottom">
+        <span>© 2026 THỜI TRANG — NÉT ĐẸP CỦA CUỘC SỐNG</span>
+        <a href="#top">Lên đầu trang ↑</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

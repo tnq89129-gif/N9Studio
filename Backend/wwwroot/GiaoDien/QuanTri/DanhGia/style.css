@@ -1,0 +1,119 @@
+@import url("../KhachHang/style.css");
+
+.review-note {
+  margin: 0 0 14px;
+  padding: 10px 13px;
+  border: 1px solid rgba(225, 205, 157, .18);
+  border-radius: 9px;
+  color: rgba(247, 248, 243, .68);
+  background: rgba(225, 205, 157, .055);
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.review-feedback {
+  margin: 0 0 14px;
+  padding: 10px 13px;
+  border: 1px solid rgba(177, 205, 150, .24);
+  border-radius: 9px;
+  color: #d5e4c7;
+  background: rgba(109, 145, 91, .13);
+  font-size: 10px;
+}
+
+.review-admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 16px;
+}
+
+.review-admin-stats .product-stat strong {
+  font-size: clamp(16px, 2vw, 24px);
+}
+
+.review-panel .product-search input {
+  width: 225px;
+}
+
+.review-panel .product-controls {
+  flex-wrap: wrap;
+}
+
+.reviews-table th,
+.reviews-table td {
+  padding-right: 13px;
+  padding-left: 13px;
+}
+
+.review-product-name,
+.review-product-id,
+.review-customer-name,
+.review-type,
+.review-rating,
+.review-rating-number {
+  display: block;
+}
+
+.review-product-name,
+.review-customer-name {
+  max-width: 175px;
+  overflow: hidden;
+  color: #f4f1e6;
+  font-size: 9px;
+  font-weight: 550;
+  text-overflow: ellipsis;
+}
+
+.review-product-id,
+.review-type,
+.review-rating-number {
+  margin-top: 5px;
+  color: rgba(247, 248, 243, .47);
+  font-size: 8px;
+}
+
+.review-rating {
+  color: #e8c66f;
+  font-size: 10px;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+
+.review-comment-cell {
+  min-width: 220px;
+  max-width: 330px;
+  color: rgba(247, 248, 243, .73) !important;
+  font-size: 9px !important;
+  line-height: 1.55;
+  white-space: normal;
+}
+
+@media (max-width: 900px) {
+  .review-admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .review-panel .product-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .review-panel .product-controls {
+    width: 100%;
+  }
+
+  .review-panel .product-search {
+    flex: 1 1 100%;
+  }
+
+  .review-panel .product-search input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .review-admin-stats {
+    gap: 7px;
+  }
+}

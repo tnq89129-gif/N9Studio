@@ -1,0 +1,12 @@
+@import url("auth.css");
+.recovery-hint { margin: -3px 0 3px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.recovery-status { line-height: 1.8; overflow-wrap: anywhere; }
+.recovery-status[data-state="success"] { color: #c9e8b4; }
+.recovery-success { padding: 22px 0; }
+.recovery-success h2 { font-size: clamp(24px,3vw,34px); margin: 18px 0 12px; }
+.recovery-success p { color: var(--muted); line-height: 1.8; }
+.recovery-check { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; border: 1px solid #c9e8b4; color: #c9e8b4; background: rgba(201,232,180,.08); font-size: 26px; }
+.recovery-login { display: grid; place-items: center; margin-top: 26px; text-decoration: none; }
+.form [disabled] { cursor: wait; opacity: .65; }
+.switch-auth { line-height: 1.8; }
+input[readonly] { opacity: .8; }

@@ -1,0 +1,11 @@
+bin/
+obj/
+**/bin/
+**/obj/
+.git/
+.vs/
+node_modules/
+App_Data/ThuThuNghiem/
+*.eml
+.env
+.env.*

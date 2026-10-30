@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Sơ mi trắng tối giản",
+    "description": "Áo sơ mi phom dáng thanh lịch, dễ kết hợp trong nhiều dịp.",
+    "imageUrl": "/images/7.jpg",
+    "category": "women",
+    "price": 890000,
+    "colors": [
+      "Trắng",
+      "Đen",
+      "Be"
+    ]
+  },
+  {
+    "name": "Blazer đen thanh lịch",
+    "description": "Blazer phom đứng hiện đại, tạo điểm nhấn chỉn chu và thanh lịch.",
+    "imageUrl": "/images/8.jpg",
+    "category": "women outerwear",
+    "price": 1290000,
+    "colors": [
+      "Đen",
+      "Be",
+      "Kem"
+    ]
+  },
+  {
+    "name": "Đầm nâu thanh lịch",
+    "description": "Thiết kế đầm nữ tôn dáng với sắc nâu ấm áp, phù hợp nhiều dịp.",
+    "imageUrl": "/images/10.jpg",
+    "category": "women",
+    "price": 1150000,
+    "colors": [
+      "Nâu",
+      "Đen",
+      "Be"
+    ]
+  },
+  {
+    "name": "Áo khoác dạ cổ điển",
+    "description": "Áo khoác dạ dáng dài, giữ ấm và hoàn thiện vẻ ngoài cổ điển.",
+    "imageUrl": "/images/11.jpg",
+    "category": "women outerwear",
+    "price": 1790000,
+    "colors": [
+      "Xám",
+      "Đen",
+      "Be"
+    ]
+  },
+  {
+    "name": "Set dạo phố tối giản",
+    "description": "Set phối sẵn tối giản, tiện lợi cho những buổi dạo phố thường ngày.",
+    "imageUrl": "/images/12.jpg",
+    "category": "women",
+    "price": 1250000,
+    "colors": [
+      "Xám",
+      "Đen",
+      "Trắng"
+    ]
+  },
+  {
+    "name": "Áo khoác denim cá tính",
+    "description": "Áo khoác denim năng động, dễ phối với trang phục thường ngày.",
+    "imageUrl": "/images/%C3%A1o%206.jpg",
+    "category": "men outerwear",
+    "price": 1390000,
+    "colors": [
+      "Đen",
+      "Xanh denim",
+      "Xám"
+    ]
+  }
+]

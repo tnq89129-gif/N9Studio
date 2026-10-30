@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#383b34">
+  <meta name="description" content="Xem lại sản phẩm đã chọn trong giỏ hàng của bạn.">
+  <title>Giỏ hàng | Thời trang — Nét đẹp của cuộc sống</title>
+  <link rel="stylesheet" href="../../DungChung/auth.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="../../DungChung/auth.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page cart-page">
+    <svg class="flow-ribbons" viewBox="0 0 1024 572" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="ribbon-spectrum" x1="0" y1="0" x2="1" y2=".2">
+          <stop offset="0" stop-color="#c27bff"/>
+          <stop offset=".34" stop-color="#c9e8d6"/>
+          <stop offset=".68" stop-color="#baff88"/>
+          <stop offset="1" stop-color="#e6d6ff"/>
+        </linearGradient>
+        <filter id="ribbon-blur"><feGaussianBlur stdDeviation="5"/></filter>
+      </defs>
+      <g>
+        <path class="ribbon-base" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-glow" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+        <path class="ribbon-light" d="M-24 292 C112 268 175 229 273 160 S431 22 570 24 C735 27 887 97 1048 251"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-glow ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+        <path class="ribbon-light ribbon--two" d="M-30 404 C105 366 165 284 245 232 C322 182 391 130 496 101 C638 61 771 121 1050 270"/>
+      </g>
+      <g>
+        <path class="ribbon-base" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-glow ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+        <path class="ribbon-light ribbon--three" d="M120 598 C146 476 170 387 262 342 C358 295 451 253 569 237 C742 214 886 222 1050 274"/>
+      </g>
+    </svg>
+
+    <div class="site-dock-wrap">
+      <a class="site-brand" href="../TrangChu/index.html" aria-label="Về trang chủ">
+        <img src="../../Images/logo-thoi-trang.png" alt="Thời trang — Nét đẹp của cuộc sống">
+      </a>
+      <nav class="site-dock" aria-label="Điều hướng chính">
+        <a class="site-dock-item" href="../TrangChu/index.html">Trang chủ</a>
+        <a class="site-dock-item" href="../SanPham/index.html">Sản phẩm</a>
+        <a class="site-dock-item" href="../GioHang/index.html" aria-current="page">Giỏ hàng</a>
+        <a class="site-dock-item" href="../DonHang/index.html">Đơn hàng của tôi</a>
+        <a class="site-dock-item" href="../TaiKhoan/index.html">Tài khoản</a>
+        <a class="site-dock-item" href="../DangNhap/index.html">Đăng nhập</a>
+        <a class="site-dock-item" href="../DangKy/index.html">Đăng ký</a>
+      </nav>
+      <div class="site-dock-actions" role="group" aria-label="Tìm kiếm và giỏ hàng">
+        <a class="site-dock-action" href="../SanPham/index.html#product-list" aria-label="Tìm kiếm sản phẩm" title="Tìm kiếm sản phẩm">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4.2 4.2"/></svg>
+        </a>
+        <a class="site-dock-action site-cart-action" href="../GioHang/index.html" aria-label="Giỏ hàng" title="Giỏ hàng">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.1a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="9.5" cy="19" r="1"/><circle cx="18" cy="19" r="1"/></svg>
+          <span id="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+
+    <main class="cart-main">
+      <header class="cart-heading">
+        <p class="eyebrow">LỰA CHỌN CỦA BẠN</p>
+        <h1>Giỏ hàng</h1>
+        <p id="cart-count" aria-live="polite"></p>
+      </header>
+      <div id="cart-error" class="cart-error" role="alert" hidden></div>
+      <div class="cart-layout" id="cart-layout">
+        <section class="cart-items" aria-label="Sản phẩm trong giỏ hàng">
+          <div id="cart-items-list"></div>
+          <a class="continue-shopping" href="../SanPham/index.html">← Tiếp tục mua sắm</a>
+        </section>
+        <aside class="cart-summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">Tóm tắt đơn hàng</h2>
+          <div class="summary-line">
+            <span>Tạm tính</span>
+            <span id="cart-subtotal">0₫</span>
+          </div>
+          <div class="summary-line">
+            <span>Phí vận chuyển</span>
+            <span class="free-shipping">Miễn phí</span>
+          </div>
+          <div class="summary-line summary-total">
+            <span>Tổng cộng</span>
+            <span id="cart-total">0₫</span>
+          </div>
+          <p class="summary-note">Phí giao hàng được miễn phí.</p>
+          <button class="checkout-button" id="checkout-button" type="button">Tiếp tục đặt hàng</button>
+          <p class="checkout-message" id="checkout-message" role="status" hidden></p>
+        </aside>
+      </div>
+      <section class="cart-empty" id="cart-empty" hidden>
+        <div class="empty-bag" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+        </div>
+        <h2>Giỏ hàng của bạn đang trống</h2>
+        <p>Hãy khám phá bộ sưu tập và chọn món đồ yêu thích nhé.</p>
+        <a href="../SanPham/index.html">Khám phá sản phẩm</a>
+      </section>
+    </main>
+
+    <dialog class="checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-title">
+      <form class="checkout-form" id="checkout-form">
+        <header class="checkout-heading">
+          <div>
+            <p class="eyebrow">HOÀN TẤT ĐƠN HÀNG</p>
+            <h2 id="checkout-title">Thông tin giao hàng</h2>
+          </div>
+          <button class="checkout-close" id="checkout-close" type="button" aria-label="Đóng">×</button>
+        </header>
+        <label for="checkout-name">Họ và tên</label>
+        <input id="checkout-name" name="name" autocomplete="name" required>
+        <label for="checkout-email">Email</label>
+        <input id="checkout-email" name="email" type="email" autocomplete="email" required>
+        <label for="checkout-phone">Số điện thoại</label>
+        <input id="checkout-phone" name="phone" type="tel" autocomplete="tel" required>
+        <label for="checkout-address">Địa chỉ nhận hàng</label>
+        <textarea id="checkout-address" name="address" autocomplete="street-address" rows="3" required></textarea>
+        <p class="checkout-total">Tổng thanh toán <strong id="checkout-total">0₫</strong></p>
+        <p class="checkout-form-error" id="checkout-error" role="alert" hidden></p>
+        <button class="checkout-button" type="submit">Xác nhận đặt hàng</button>
+        <p class="checkout-disclaimer">Bản demo lưu đơn hàng trên trình duyệt, chưa kết nối thanh toán hoặc vận chuyển thực tế.</p>
+      </form>
+    </dialog>
+
+    <footer class="cart-footer">
+      <span>THỜI TRANG — NÉT ĐẸP CỦA CUỘC SỐNG</span>
+      <a href="../TrangChu/index.html">Trở về trang chủ</a>
+    </footer>
+  </div>
+</body>
+</html>
